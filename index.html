@@ -1,0 +1,523 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homeverse — Egypt Premier Real Estate</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header class="header" id="mainHeader">
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo"><i class="fas fa-gem"></i> Home<span>verse</span></a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="user-actions">
+        <a href="./all-properties.html" class="nav-list-btn"><i class="fas fa-plus"></i> List Property</a>
+        <a href="./login-style.html" class="login-btn" id="navLoginBtn"><i class="fas fa-user"></i> Login</a>
+        <button type="button" class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-bg"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1920&q=85" alt="" fetchpriority="high"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-pill"><i class="fas fa-crown"></i> Egypt's #1 Luxury Real Estate Platform</div>
+    <h1>Discover Your<br><em>Perfect Home</em><br><span class="hero-sub">in Egypt</span></h1>
+    <p>Over 1,200 verified luxury properties — from New Cairo villas to Sahel chalets. Find your dream home today.</p>
+    <div class="hero-ctas">
+      <a href="./all-properties.html" class="btn btn-primary btn-xl"><i class="fas fa-search"></i> Explore Properties</a>
+      <a href="#contact" class="btn btn-glass btn-xl"><i class="fas fa-headset"></i> Free Consultation</a>
+    </div>
+    <div class="hero-badges">
+      <div class="hero-badge"><i class="fas fa-shield-check"></i><span>100% Verified</span></div>
+      <div class="hero-badge"><i class="fas fa-star"></i><span>4.9 Rated</span></div>
+      <div class="hero-badge"><i class="fas fa-bolt"></i><span>Fast Process</span></div>
+      <div class="hero-badge"><i class="fas fa-lock"></i><span>Secure & Legal</span></div>
+    </div>
+  </div>
+  <div class="hero-stats-bar">
+    <div class="hstat"><span>1,200<i>+</i></span><p>Properties</p></div>
+    <div class="hstat-div"></div>
+    <div class="hstat"><span>850<i>+</i></span><p>Happy Clients</p></div>
+    <div class="hstat-div"></div>
+    <div class="hstat"><span>12</span><p>Cities</p></div>
+    <div class="hstat-div"></div>
+    <div class="hstat"><span>98<i>%</i></span><p>Satisfaction</p></div>
+    <div class="hstat-div"></div>
+    <div class="hstat"><span>10<i>yr</i></span><p>Experience</p></div>
+  </div>
+</section>
+
+<section class="search-section">
+  <div class="container">
+    <div class="search-tabs">
+      <button class="stab active" data-tab="buy"><i class="fas fa-home"></i> Buy</button>
+      <button class="stab" data-tab="rent"><i class="fas fa-key"></i> Rent</button>
+      <button class="stab" data-tab="invest"><i class="fas fa-chart-line"></i> Invest</button>
+    </div>
+    <div class="search-bar">
+      <div class="sf"><i class="fas fa-map-marker-alt"></i>
+        <select><option>All Locations</option><option>New Cairo</option><option>Sheikh Zayed</option><option>Maadi</option><option>North Coast</option><option>Heliopolis</option></select>
+      </div>
+      <div class="sdiv"></div>
+      <div class="sf"><i class="fas fa-home"></i>
+        <select><option>Property Type</option><option>Villa</option><option>Apartment</option><option>Penthouse</option><option>Chalet</option></select>
+      </div>
+      <div class="sdiv"></div>
+      <div class="sf"><i class="fas fa-tag"></i>
+        <select><option>Budget Range</option><option>Under 2M EGP</option><option>2M-5M EGP</option><option>5M-10M EGP</option><option>10M+ EGP</option></select>
+      </div>
+      <div class="sdiv"></div>
+      <div class="sf"><i class="fas fa-bed"></i>
+        <select><option>Bedrooms</option><option>Studio</option><option>1 Bed</option><option>2 Beds</option><option>3+ Beds</option></select>
+      </div>
+      <a href="./all-properties.html" class="search-go"><i class="fas fa-search"></i> Search</a>
+    </div>
+    <div class="search-popular">
+      <span>Popular:</span>
+      <a href="all-properties.html">New Cairo Villas</a>
+      <a href="all-properties.html">North Coast Chalets</a>
+      <a href="all-properties.html">Sheikh Zayed Apts</a>
+      <a href="all-properties.html">Maadi Rentals</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee-strip">
+  <div class="marquee-inner">
+    <span><i class="fas fa-gem"></i> Luxury Villas in New Cairo</span>
+    <span><i class="fas fa-water"></i> Beach Chalets — North Coast</span>
+    <span><i class="fas fa-city"></i> Penthouses with Nile View</span>
+    <span><i class="fas fa-tree"></i> Garden Villas in Sheikh Zayed</span>
+    <span><i class="fas fa-star"></i> Award-Winning Real Estate Agency</span>
+    <span><i class="fas fa-map-marker-alt"></i> Properties Across 12 Cities</span>
+    <span><i class="fas fa-gem"></i> Luxury Villas in New Cairo</span>
+    <span><i class="fas fa-water"></i> Beach Chalets — North Coast</span>
+    <span><i class="fas fa-city"></i> Penthouses with Nile View</span>
+    <span><i class="fas fa-tree"></i> Garden Villas in Sheikh Zayed</span>
+    <span><i class="fas fa-star"></i> Award-Winning Real Estate Agency</span>
+    <span><i class="fas fa-map-marker-alt"></i> Properties Across 12 Cities</span>
+  </div>
+</div>
+
+<section id="properties" class="properties">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><i class="fas fa-fire"></i> Hot Listings</span>
+      <h2>Featured <span>Properties</span></h2>
+      <p>Handpicked luxury properties available right now across Egypt</p>
+    </div>
+    <div class="prop-filter-row">
+      <button class="pf-btn active" data-filter="all">All</button>
+      <button class="pf-btn" data-filter="villa">Villas</button>
+      <button class="pf-btn" data-filter="apartment">Apartments</button>
+      <button class="pf-btn" data-filter="chalet">Chalets</button>
+      <button class="pf-btn" data-filter="penthouse">Penthouses</button>
+    </div>
+    <div class="properties-grid" id="featuredGrid">
+
+      <div class="property-card" data-cat="villa">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=600&h=400&fit=crop" alt="Villa" loading="lazy">
+          <div class="prop-badges"><span class="pbadge featured">Featured</span></div>
+          <div class="prop-actions">
+            <button class="pact-btn save-btn"><i class="far fa-heart"></i></button>
+            <button class="pact-btn"><i class="fas fa-share-alt"></i></button>
+          </div>
+          <div class="prop-overlay"><a href="./property-details.html" class="overlay-view"><i class="fas fa-eye"></i> Quick View</a></div>
+        </div>
+        <div class="property-info">
+          <div class="pi-top"><div class="pi-price">EGP 8,500,000</div><span class="pi-tag">Villa</span></div>
+          <h3>Luxury Villa — Katameya Heights</h3>
+          <div class="pi-feats"><span><i class="fas fa-bed"></i> 5</span><span><i class="fas fa-bath"></i> 4</span><span><i class="fas fa-ruler-combined"></i> 450m²</span><span><i class="fas fa-car"></i> 2</span></div>
+          <div class="pi-loc"><i class="fas fa-map-marker-alt"></i> Katameya Heights, New Cairo</div>
+          <div class="pi-footer">
+            <a href="./property-details.html" class="btn btn-primary" style="padding:10px 22px;font-size:0.87rem;border-radius:10px">View Details</a>
+            <div class="pi-agent"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Agent"><span>Ahmed M.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="property-card" data-cat="apartment">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop" alt="Apartment" loading="lazy">
+          <div class="prop-badges"><span class="pbadge hot">Hot Deal</span></div>
+          <div class="prop-actions">
+            <button class="pact-btn save-btn"><i class="far fa-heart"></i></button>
+            <button class="pact-btn"><i class="fas fa-share-alt"></i></button>
+          </div>
+          <div class="prop-overlay"><a href="./property-details.html" class="overlay-view"><i class="fas fa-eye"></i> Quick View</a></div>
+        </div>
+        <div class="property-info">
+          <div class="pi-top"><div class="pi-price">EGP 3,200,000</div><span class="pi-tag">Apartment</span></div>
+          <h3>Modern Apartment — Sheikh Zayed City</h3>
+          <div class="pi-feats"><span><i class="fas fa-bed"></i> 3</span><span><i class="fas fa-bath"></i> 2</span><span><i class="fas fa-ruler-combined"></i> 210m²</span><span><i class="fas fa-swimming-pool"></i> Pool</span></div>
+          <div class="pi-loc"><i class="fas fa-map-marker-alt"></i> Sheikh Zayed, Giza</div>
+          <div class="pi-footer">
+            <a href="./property-details.html" class="btn btn-primary" style="padding:10px 22px;font-size:0.87rem;border-radius:10px">View Details</a>
+            <div class="pi-agent"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Agent"><span>Sara K.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="property-card" data-cat="chalet">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&h=400&fit=crop" alt="Chalet" loading="lazy">
+          <div class="prop-badges"><span class="pbadge new">New</span></div>
+          <div class="prop-actions">
+            <button class="pact-btn save-btn"><i class="far fa-heart"></i></button>
+            <button class="pact-btn"><i class="fas fa-share-alt"></i></button>
+          </div>
+          <div class="prop-overlay"><a href="./property-details.html" class="overlay-view"><i class="fas fa-eye"></i> Quick View</a></div>
+        </div>
+        <div class="property-info">
+          <div class="pi-top"><div class="pi-price">EGP 6,800,000</div><span class="pi-tag">Chalet</span></div>
+          <h3>Beach Chalet — North Coast Sahel</h3>
+          <div class="pi-feats"><span><i class="fas fa-bed"></i> 4</span><span><i class="fas fa-bath"></i> 3</span><span><i class="fas fa-ruler-combined"></i> 320m²</span><span><i class="fas fa-water"></i> Sea View</span></div>
+          <div class="pi-loc"><i class="fas fa-map-marker-alt"></i> North Coast, Marsa Matrouh</div>
+          <div class="pi-footer">
+            <a href="./property-details.html" class="btn btn-primary" style="padding:10px 22px;font-size:0.87rem;border-radius:10px">View Details</a>
+            <div class="pi-agent"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=40&h=40&fit=crop&crop=face" alt="Agent"><span>Omar F.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="property-card" data-cat="penthouse">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop" alt="Penthouse" loading="lazy">
+          <div class="prop-badges"><span class="pbadge featured">Premium</span></div>
+          <div class="prop-actions">
+            <button class="pact-btn save-btn"><i class="far fa-heart"></i></button>
+            <button class="pact-btn"><i class="fas fa-share-alt"></i></button>
+          </div>
+          <div class="prop-overlay"><a href="./property-details.html" class="overlay-view"><i class="fas fa-eye"></i> Quick View</a></div>
+        </div>
+        <div class="property-info">
+          <div class="pi-top"><div class="pi-price">EGP 11,500,000</div><span class="pi-tag">Penthouse</span></div>
+          <h3>Sky Penthouse — Zamalek Island</h3>
+          <div class="pi-feats"><span><i class="fas fa-bed"></i> 4</span><span><i class="fas fa-bath"></i> 4</span><span><i class="fas fa-ruler-combined"></i> 560m²</span><span><i class="fas fa-city"></i> Nile View</span></div>
+          <div class="pi-loc"><i class="fas fa-map-marker-alt"></i> Zamalek, Cairo</div>
+          <div class="pi-footer">
+            <a href="./property-details.html" class="btn btn-primary" style="padding:10px 22px;font-size:0.87rem;border-radius:10px">View Details</a>
+            <div class="pi-agent"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face" alt="Agent"><span>Nadia R.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="property-card" data-cat="villa">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=600&h=400&fit=crop" alt="Palace" loading="lazy">
+          <div class="prop-badges"><span class="pbadge new">New</span></div>
+          <div class="prop-actions">
+            <button class="pact-btn save-btn"><i class="far fa-heart"></i></button>
+            <button class="pact-btn"><i class="fas fa-share-alt"></i></button>
+          </div>
+          <div class="prop-overlay"><a href="./property-details.html" class="overlay-view"><i class="fas fa-eye"></i> Quick View</a></div>
+        </div>
+        <div class="property-info">
+          <div class="pi-top"><div class="pi-price">EGP 15,000,000</div><span class="pi-tag">Palace</span></div>
+          <h3>Grand Palace — Heliopolis</h3>
+          <div class="pi-feats"><span><i class="fas fa-bed"></i> 7</span><span><i class="fas fa-bath"></i> 6</span><span><i class="fas fa-ruler-combined"></i> 900m²</span><span><i class="fas fa-tree"></i> Garden</span></div>
+          <div class="pi-loc"><i class="fas fa-map-marker-alt"></i> Heliopolis, Cairo</div>
+          <div class="pi-footer">
+            <a href="./property-details.html" class="btn btn-primary" style="padding:10px 22px;font-size:0.87rem;border-radius:10px">View Details</a>
+            <div class="pi-agent"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Agent"><span>Ahmed M.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="property-card" data-cat="apartment">
+        <div class="property-image">
+          <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&h=400&fit=crop" alt="Townhouse" loading="lazy">
+          <div class="prop-actions">
+            <button class="pact-btn save-btn"><i class="far fa-heart"></i></button>
+            <button class="pact-btn"><i class="fas fa-share-alt"></i></button>
+          </div>
+          <div class="prop-overlay"><a href="./property-details.html" class="overlay-view"><i class="fas fa-eye"></i> Quick View</a></div>
+        </div>
+        <div class="property-info">
+          <div class="pi-top"><div class="pi-price">EGP 4,900,000</div><span class="pi-tag">Townhouse</span></div>
+          <h3>Garden Townhouse — Madinaty</h3>
+          <div class="pi-feats"><span><i class="fas fa-bed"></i> 4</span><span><i class="fas fa-bath"></i> 3</span><span><i class="fas fa-ruler-combined"></i> 310m²</span><span><i class="fas fa-seedling"></i> Garden</span></div>
+          <div class="pi-loc"><i class="fas fa-map-marker-alt"></i> Madinaty, New Cairo</div>
+          <div class="pi-footer">
+            <a href="./property-details.html" class="btn btn-primary" style="padding:10px 22px;font-size:0.87rem;border-radius:10px">View Details</a>
+            <div class="pi-agent"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Agent"><span>Sara K.</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="view-all-wrap">
+      <a href="./all-properties.html" class="btn btn-primary btn-xl"><i class="fas fa-th-large"></i> View All 1,200+ Properties</a>
+    </div>
+  </div>
+</section>
+
+<section class="locations-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><i class="fas fa-map-marker-alt"></i> Browse by City</span>
+      <h2>Explore <span>Top Locations</span></h2>
+      <p>Find properties in Egypt's most sought-after destinations</p>
+    </div>
+    <div class="locations-grid">
+      <a href="all-properties.html" class="loc-card loc-big" style="background-image:url('https://images.unsplash.com/photo-1572120360610-d971b9d7767c?w=700&q=75')">
+        <div class="loc-overlay"></div><div class="loc-info"><h3>New Cairo</h3><p>420+ Properties</p></div>
+      </a>
+      <a href="all-properties.html" class="loc-card" style="background-image:url('https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=500&q=75')">
+        <div class="loc-overlay"></div><div class="loc-info"><h3>North Coast</h3><p>180+ Properties</p></div>
+      </a>
+      <a href="all-properties.html" class="loc-card" style="background-image:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=500&q=75')">
+        <div class="loc-overlay"></div><div class="loc-info"><h3>Sheikh Zayed</h3><p>210+ Properties</p></div>
+      </a>
+      <a href="all-properties.html" class="loc-card" style="background-image:url('https://images.unsplash.com/photo-1534430480872-3498386e7856?w=500&q=75')">
+        <div class="loc-overlay"></div><div class="loc-info"><h3>Maadi</h3><p>150+ Properties</p></div>
+      </a>
+      <a href="all-properties.html" class="loc-card" style="background-image:url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500&q=75')">
+        <div class="loc-overlay"></div><div class="loc-info"><h3>Zamalek</h3><p>95+ Properties</p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="services" class="services-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><i class="fas fa-concierge-bell"></i> What We Offer</span>
+      <h2>Full-Spectrum <span>Services</span></h2>
+      <p>Everything you need under one roof</p>
+    </div>
+    <div class="services-grid">
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-search-location"></i></div><h3>Property Search</h3><p>Advanced filters to find your ideal home fast with verified listings.</p><a href="all-properties.html" class="svc-link">Explore <i class="fas fa-arrow-right"></i></a></div>
+      <div class="svc-card svc-featured"><div class="svc-icon"><i class="fas fa-handshake"></i></div><h3>Buy & Sell</h3><p>Expert negotiation for the best market price every time.</p><a href="#contact" class="svc-link">Get Started <i class="fas fa-arrow-right"></i></a></div>
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-key"></i></div><h3>Rentals</h3><p>Short and long-term furnished and unfurnished options.</p><a href="all-properties.html" class="svc-link">Browse <i class="fas fa-arrow-right"></i></a></div>
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-chart-line"></i></div><h3>Investment</h3><p>Data-driven ROI analysis and portfolio advice by experts.</p><a href="#contact" class="svc-link">Consult <i class="fas fa-arrow-right"></i></a></div>
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-file-contract"></i></div><h3>Legal Services</h3><p>Title deeds, contracts, and full documentation handled.</p><a href="#contact" class="svc-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
+      <div class="svc-card"><div class="svc-icon"><i class="fas fa-hard-hat"></i></div><h3>Property Management</h3><p>Maintenance, tenants, and rental income all managed.</p><a href="#contact" class="svc-link">Manage <i class="fas fa-arrow-right"></i></a></div>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-text">
+        <span class="section-label"><i class="fas fa-award"></i> Why Homeverse</span>
+        <h2>The Smarter Way<br>to Buy <span>Real Estate</span></h2>
+        <p>We combine technology, local expertise, and passion for service to deliver Egypt's best real estate experience.</p>
+        <div class="why-list">
+          <div class="why-item"><div class="why-icon"><i class="fas fa-check"></i></div><div><strong>100% Verified Listings</strong><p>Every property inspected and authenticated by our team.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fas fa-check"></i></div><div><strong>Dedicated Agent Support</strong><p>A personal agent guides you from search to signature.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fas fa-check"></i></div><div><strong>Transparent Pricing</strong><p>No hidden fees. Market-accurate valuations every time.</p></div></div>
+          <div class="why-item"><div class="why-icon"><i class="fas fa-check"></i></div><div><strong>Fast Legal Processing</strong><p>Close your deal in as little as 30 days with full legal support.</p></div></div>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-xl" style="margin-top:2.5rem"><i class="fas fa-phone"></i> Talk to an Expert</a>
+      </div>
+      <div class="why-visual">
+        <div class="why-img-wrap">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=700&h=600&fit=crop" alt="Homeverse team collaborating" loading="lazy">
+          <div class="why-card-float why-card-1"><i class="fas fa-trophy"></i><div><strong>#1 Agency</strong><span>in Egypt 2024</span></div></div>
+          <div class="why-card-float why-card-2"><i class="fas fa-home"></i><div><strong>1,200+</strong><span>Deals Closed</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="numbers-section">
+  <div class="container">
+    <div class="numbers-grid">
+      <div class="num-item"><span class="num-val" data-target="1200">0</span><span class="num-plus">+</span><p>Properties Sold</p></div>
+      <div class="num-item"><span class="num-val" data-target="850">0</span><span class="num-plus">+</span><p>Happy Clients</p></div>
+      <div class="num-item"><span class="num-val" data-target="50">0</span><span class="num-plus">+</span><p>Expert Agents</p></div>
+      <div class="num-item"><span class="num-val" data-target="12">0</span><span class="num-plus"></span><p>Cities Covered</p></div>
+      <div class="num-item"><span class="num-val" data-target="10">0</span><span class="num-plus">yr</span><p>Experience</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&h=640&fit=crop" alt="Modern home interior" loading="lazy">
+        <div class="about-img-ring"></div>
+        <div class="about-exp"><span>10+</span><small>Years of Excellence</small></div>
+      </div>
+      <div class="about-text">
+        <span class="section-label"><i class="fas fa-gem"></i> Our Story</span>
+        <h2>Egypt's Most <span>Trusted</span> Real Estate Partner</h2>
+        <p>Since 2015, Homeverse has been the go-to platform for Egypt's most discerning property buyers, sellers, and investors. With 50+ expert agents across 12 cities, we've closed over 1,200 deals and earned a 4.9 satisfaction rating.</p>
+        <p style="margin-top:1rem">We don't just list properties — we build lasting relationships and make real estate simple.</p>
+        <div class="about-feats">
+          <div class="af-item"><i class="fas fa-shield-alt"></i><span>Fully Licensed</span></div>
+          <div class="af-item"><i class="fas fa-bolt"></i><span>Close in 30 Days</span></div>
+          <div class="af-item"><i class="fas fa-headset"></i><span>7-Day Support</span></div>
+          <div class="af-item"><i class="fas fa-chart-bar"></i><span>Free Valuation</span></div>
+          <div class="af-item"><i class="fas fa-map-marked-alt"></i><span>12 Cities</span></div>
+          <div class="af-item"><i class="fas fa-star"></i><span>4.9 Rated</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testi-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><i class="fas fa-quote-left"></i> Client Stories</span>
+      <h2>What Our <span>Clients</span> Say</h2>
+      <p>Real stories from people who found their dream homes with Homeverse</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="tc-stars">★★★★★</div>
+        <p>"Homeverse found us our dream villa in New Cairo within 2 weeks. Incredibly professional, seamless process!"</p>
+        <div class="tc-author"><div class="tc-av" style="background:linear-gradient(135deg,#34d399,#10b981)">A</div><div><strong>Ahmed Hassan</strong><span>Bought Villa — New Cairo</span></div></div>
+      </div>
+      <div class="testi-card testi-featured">
+        <div class="tc-quote"><i class="fas fa-quote-left"></i></div>
+        <div class="tc-stars">★★★★★</div>
+        <p>"Sold my Maadi apartment at 15% above asking price in just 3 weeks. Homeverse's market knowledge is unmatched!"</p>
+        <div class="tc-author"><div class="tc-av" style="background:linear-gradient(135deg,#60a5fa,#3b82f6)">S</div><div><strong>Sara Mahmoud</strong><span>Sold Apartment — Maadi</span></div></div>
+      </div>
+      <div class="testi-card">
+        <div class="tc-stars">★★★★★</div>
+        <p>"Their investment advice helped me buy at the right time. My property value increased 40% in just 2 years!"</p>
+        <div class="tc-author"><div class="tc-av" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">M</div><div><strong>Mohamed Karim</strong><span>Property Investor</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="cta-glow"></div>
+      <div class="cta-text">
+        <span class="section-label" style="margin-bottom:1.2rem"><i class="fas fa-rocket"></i> Ready to Start?</span>
+        <h2>Your Dream Home is <span>One Click Away</span></h2>
+        <p>Join 850+ happy clients who found their perfect property with Homeverse</p>
+      </div>
+      <div class="cta-actions">
+        <a href="all-properties.html" class="btn btn-primary btn-xl"><i class="fas fa-search"></i> Browse Properties</a>
+        <a href="login-style.html" class="btn btn-glass btn-xl"><i class="fas fa-user-plus"></i> Create Free Account</a>
+        <p class="cta-note"><i class="fas fa-lock"></i> No commitment. 100% free to browse.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label"><i class="fas fa-headset"></i> Get In Touch</span>
+      <h2>Let's Find Your <span>Perfect Home</span></h2>
+      <p>Our consultants are available 7 days a week</p>
+    </div>
+    <div class="contact-content">
+      <div class="contact-info">
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i><div><h4>Visit Us</h4><p>90th Street, New Cairo, Cairo, Egypt</p></div></div>
+        <div class="contact-item"><i class="fas fa-phone"></i><div><h4>Call Us</h4><p>+20 100 123 4567</p></div></div>
+        <div class="contact-item"><i class="fas fa-envelope"></i><div><h4>Email Us</h4><p>info@homeverse.com.eg</p></div></div>
+        <div class="contact-item"><i class="fas fa-clock"></i><div><h4>Working Hours</h4><p>Sun–Thu: 9AM–7PM · Fri–Sat: 10AM–5PM</p></div></div>
+        <div class="contact-socials">
+          <a href="#" class="cs-btn cs-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="#" class="cs-btn cs-fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+          <a href="#" class="cs-btn cs-ig"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactFormMain">
+        <div class="cf-row">
+          <input type="text" placeholder="Full Name" required>
+          <input type="tel" placeholder="Phone Number" required>
+        </div>
+        <input type="email" placeholder="Email Address (optional)">
+        <select><option value="">I am interested in...</option><option>Buying</option><option>Selling</option><option>Renting</option><option>Investment</option></select>
+        <textarea placeholder="Tell us about your dream property..." rows="5" required></textarea>
+        <button type="submit" class="btn btn-primary" style="border-radius:12px;width:100%;padding:17px;font-size:1rem"><i class="fas fa-paper-plane"></i> Send Message</button>
+        <p class="cf-note"><i class="fas fa-lock"></i> Your data is 100% private and never shared.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="logo" style="font-size:1.45rem;margin-bottom:1.2rem;display:inline-flex"><i class="fas fa-gem"></i> Home<span>verse</span></a>
+          <p>Egypt's premier real estate platform connecting buyers, sellers, and investors with exceptional properties since 2015.</p>
+          <div class="footer-socials">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Quick Links</h4><ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="all-properties.html">All Properties</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="login-style.html">Login / Register</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Property Types</h4><ul>
+          <li><a href="all-properties.html">Luxury Villas</a></li>
+          <li><a href="all-properties.html">Apartments</a></li>
+          <li><a href="all-properties.html">Penthouses</a></li>
+          <li><a href="all-properties.html">Beach Chalets</a></li>
+          <li><a href="all-properties.html">Townhouses</a></li>
+          <li><a href="all-properties.html">Commercial</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Top Locations</h4><ul>
+          <li><a href="all-properties.html">New Cairo</a></li>
+          <li><a href="all-properties.html">Sheikh Zayed</a></li>
+          <li><a href="all-properties.html">Maadi</a></li>
+          <li><a href="all-properties.html">North Coast</a></li>
+          <li><a href="all-properties.html">6th of October</a></li>
+          <li><a href="all-properties.html">Heliopolis</a></li>
+        </ul></div>
+        <div class="footer-col"><h4>Contact</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-map-marker-alt"></i> 90th St, New Cairo</p>
+            <p><i class="fas fa-phone"></i> +20 100 123 4567</p>
+            <p><i class="fas fa-envelope"></i> info@homeverse.com.eg</p>
+            <p><i class="fas fa-clock"></i> Sun-Thu: 9AM-7PM</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>&copy; 2026 Homeverse Real Estate. All rights reserved. Made with <i class="fas fa-heart" style="color:var(--em)"></i> in Egypt.</p>
+      <div class="fb-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Sitemap</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="./js/script.js"></script>
+</body>
+</html>

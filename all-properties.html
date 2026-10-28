@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore all available properties in Egypt Real Estate">
+    <title>All Properties - Egypt Real Estate</title>
+
+    <!-- Preconnect to external origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+
+    <!-- Critical CSS first -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Fonts with display=swap -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome non-render-blocking -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+</head>
+<body>
+    <!-- Header -->
+    <header class="allprop-header">
+        <div class="container">
+                <a href="index.html" class="back-btn">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <div class="allprop-logo">
+                <i class="fas fa-home"></i>
+                <span>Egypt Real Estate</span>
+            </div>
+        
+        </div>
+    </header>
+
+    <!-- Properties Grid Section -->
+    <section class="properties-grid-section">
+        <div class="container">
+            <!-- Section Header -->
+            <div class="allprop-section-header">
+                <h1>All Properties</h1>
+                <p>Explore the best deals available in the real estate market</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="properties-filters">
+                <button class="filter-btn active" data-type="all">
+                    <i class="fas fa-th-large"></i> All Properties
+                </button>
+                <button class="filter-btn" data-type="apartments">
+                    <i class="fas fa-building"></i> Apartments 
+                </button>
+                <button class="filter-btn" data-type="villas">
+                    <i class="fas fa-home"></i> Villas
+                </button>
+            </div>
+
+            <!-- Properties Wrapper -->
+            <div class="properties-wrapper">
+                <div class="allprop-grid active">
+                    <!-- Apartments -->
+                    <div class="allprop-card" data-type="apartments">
+                        <div class="allprop-card-image">
+                            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=250&fit=crop" alt="Apartment" loading="lazy" width="400" height="250">
+                            <div class="property-badges">
+                                <span class="badge featured">Featured</span>
+                            </div>
+                            <div class="allprop-card-actions">
+                                <button class="action-btn share" title="Share property">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="allprop-card-info">
+                            <div class="allprop-card-header">
+                                <h3>Luxury Sea View Apartment</h3>
+                                <div class="allprop-price">1,450,000 EGP</div>
+                            </div>
+                            <div class="allprop-features">
+                                <span class="allprop-feature"><i class="fas fa-bed"></i> 3</span>
+                                <span class="allprop-feature"><i class="fas fa-bath"></i> 2</span>
+                                <span class="allprop-feature"><i class="fas fa-expand-arrows-alt"></i> 180 m²</span>
+                            </div>
+                            <div class="allprop-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Alexandria - Miami District
+                            </div>
+                            <div class="allprop-card-bottom">
+                                <a href="./property-details.html" class="allprop-btn">View Details</a>
+                                <span class="allprop-date">Posted 1 hour ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="allprop-card" data-type="apartments">
+                        <div class="allprop-card-image">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=250&fit=crop" alt="Apartment" loading="lazy" width="400" height="250">
+                            <div class="property-badges">
+                                <span class="badge hot">Hot</span>
+                            </div>
+                            <div class="allprop-card-actions">
+                                <button class="action-btn share" title="Share property">
+                                    <i class="fas fa-share"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="allprop-card-info">
+                            <div class="allprop-card-header">
+                                <h3>Modern Apartment in Nasr City</h3>
+                                <div class="allprop-price">2,100,000 EGP</div>
+                            </div>
+                            <div class="allprop-features">
+                                <span class="allprop-feature"><i class="fas fa-bed"></i> 4</span>
+                                <span class="allprop-feature"><i class="fas fa-bath"></i> 3</span>
+                                <span class="allprop-feature"><i class="fas fa-expand-arrows-alt"></i> 250 m²</span>
+                            </div>
+                            <div class="allprop-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Cairo - Nasr City
+                            </div>
+                            <div class="allprop-card-bottom">
+                                <a href="./property-details.html" class="allprop-btn">View Details</a>
+                                <span class="allprop-date">Posted 3 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="allprop-card" data-type="apartments">
+                        <div class="allprop-card-image">
+                            <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=400&h=250&fit=crop" alt="Apartment" loading="lazy" width="400" height="250">
+                            <div class="property-badges">
+                                <span class="badge featured">Featured</span>
+                            </div>
+                            <div class="allprop-card-actions">
+                                <button class="action-btn share" title="Share property"><i class="fas fa-share"></i></button>
+                            </div>
+                        </div>
+                        <div class="allprop-card-info">
+                            <div class="allprop-card-header">
+                                <h3>Apartment Near University</h3>
+                                <div class="allprop-price">850,000 EGP</div>
+                            </div>
+                            <div class="allprop-features">
+                                <span class="allprop-feature"><i class="fas fa-bed"></i> 2</span>
+                                <span class="allprop-feature"><i class="fas fa-bath"></i> 2</span>
+                                <span class="allprop-feature"><i class="fas fa-expand-arrows-alt"></i> 120 m²</span>
+                            </div>
+                            <div class="allprop-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Cairo - New Cairo
+                            </div>
+                            <div class="allprop-card-bottom">
+                                <a href="./property-details.html" class="allprop-btn">View Details</a>
+                                <span class="allprop-date">Posted 1 day ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Villas -->
+                    <div class="allprop-card" data-type="villas">
+                        <div class="allprop-card-image">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=250&fit=crop" alt="Villa" loading="lazy" width="400" height="250">
+                            <div class="property-badges">
+                                <span class="badge featured">Featured</span>
+                            </div>
+                            <div class="allprop-card-actions">
+                                <button class="action-btn share" title="Share property"><i class="fas fa-share"></i></button>
+                            </div>
+                        </div>
+                        <div class="allprop-card-info">
+                            <div class="allprop-card-header">
+                                <h3>Luxury Villa in Sheikh Zayed</h3>
+                                <div class="allprop-price">3,200,000 EGP</div>
+                            </div>
+                            <div class="allprop-features">
+                                <span class="allprop-feature"><i class="fas fa-bed"></i> 5</span>
+                                <span class="allprop-feature"><i class="fas fa-bath"></i> 4</span>
+                                <span class="allprop-feature"><i class="fas fa-expand-arrows-alt"></i> 520 m²</span>
+                            </div>
+                            <div class="allprop-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Giza - Sheikh Zayed
+                            </div>
+                            <div class="allprop-card-bottom">
+                                <a href="./property-details.html" class="allprop-btn">View Details</a>
+                                <span class="allprop-date">Posted 2 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="allprop-card" data-type="villas">
+                        <div class="allprop-card-image">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=250&fit=crop" alt="Villa" loading="lazy" width="400" height="250">
+                            <div class="property-badges">
+                                <span class="badge hot">Hot</span>
+                            </div>
+                            <div class="allprop-card-actions">
+                                <button class="action-btn share" title="Share property"><i class="fas fa-share"></i></button>
+                            </div>
+                        </div>
+                        <div class="allprop-card-info">
+                            <div class="allprop-card-header">
+                                <h3>Private Villa with Garden</h3>
+                                <div class="allprop-price">4,800,000 EGP</div>
+                            </div>
+                            <div class="allprop-features">
+                                <span class="allprop-feature"><i class="fas fa-bed"></i> 6</span>
+                                <span class="allprop-feature"><i class="fas fa-bath"></i> 5</span>
+                                <span class="allprop-feature"><i class="fas fa-expand-arrows-alt"></i> 750 m²</span>
+                            </div>
+                            <div class="allprop-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Cairo - New Cairo
+                            </div>
+                            <div class="allprop-card-bottom">
+                                <a href="./property-details.html" class="allprop-btn">View Details</a>
+                                <span class="allprop-date">Posted 6 hours ago</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="allprop-card" data-type="villas">
+                        <div class="allprop-card-image">
+                            <img src="https://images.unsplash.com/photo-1578943909735-481aa7d3d9be?w=400&h=250&fit=crop" alt="Villa" loading="lazy" width="400" height="250">
+                            <div class="property-badges">
+                                <span class="badge featured">Featured</span>
+                            </div>
+                            <div class="allprop-card-actions">
+                                <button class="action-btn share" title="Share property"><i class="fas fa-share"></i></button>
+                            </div>
+                        </div>
+                        <div class="allprop-card-info">
+                            <div class="allprop-card-header">
+                                <h3>Luxury Villa in North Coast</h3>
+                                <div class="allprop-price">6,500,000 EGP</div>
+                            </div>
+                            <div class="allprop-features">
+                                <span class="allprop-feature"><i class="fas fa-bed"></i> 7</span>
+                                <span class="allprop-feature"><i class="fas fa-bath"></i> 6</span>
+                                <span class="allprop-feature"><i class="fas fa-expand-arrows-alt"></i> 1100 m²</span>
+                            </div>
+                            <div class="allprop-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                North Coast - Egypt
+                            </div>
+                            <div class="allprop-card-bottom">
+                                <a href="./property-details.html" class="allprop-btn">View Details</a>
+                                <span class="allprop-date">Posted 1 day ago</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="allprop-logo">
+                        <i class="fas fa-home"></i>
+                        <span>Egypt Real Estate</span>
+                    </div>
+                    <p>The largest real estate platform in Egypt offering the best deals and services.</p>
+                    <div class="social-links">
+                        <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#properties">Properties</a></li>
+                        <li><a href="index.html#about">About Us</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Property Sales</a></li>
+                        <li><a href="#">Property Rentals</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Property Valuation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <div class="contact-details">
+                        <p><i class="fas fa-phone"></i> +20 10 1234 5678</p>
+                        <p><i class="fas fa-envelope"></i> info@egyptrealestate.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Cairo - Nasr City</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Egypt Real Estate. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

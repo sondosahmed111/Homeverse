@@ -1,0 +1,574 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile — Homeverse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <style>
+        /* ── Profile Page Exclusive Styles ── */
+        .prof-page { background:#0a0a0a; min-height:100vh; padding-top:68px; }
+
+        /* TOP NAV */
+        .prof-nav { position:fixed; top:0; width:100%; z-index:1000; background:rgba(10,10,10,0.96); backdrop-filter:blur(20px); border-bottom:1px solid rgba(16,185,129,0.12); }
+        .prof-nav-inner { max-width:1240px; margin:0 auto; padding:0 28px; height:68px; display:flex; align-items:center; justify-content:space-between; }
+        .prof-nav-logo { display:flex; align-items:center; gap:9px; font-size:1.2rem; font-weight:700; color:#fff; }
+        .prof-nav-logo i { color:#10b981; font-size:1.4rem; }
+        .prof-nav-logo span { color:#10b981; }
+        .prof-nav-right { display:flex; align-items:center; gap:12px; }
+        .prof-nav-back { display:flex; align-items:center; gap:7px; padding:8px 18px; border-radius:999px; background:rgba(16,185,129,0.07); border:1px solid rgba(16,185,129,0.2); color:#6ee7b7; font-size:0.85rem; font-weight:600; transition:.25s ease; }
+        .prof-nav-back:hover { background:rgba(16,185,129,0.15); color:#34d399; }
+
+        /* HERO COVER */
+        .prof-cover {
+            position:relative; height:320px; overflow:hidden;
+            background:url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1400&q=80') center/cover no-repeat;
+        }
+        .prof-cover-overlay {
+            position:absolute; inset:0;
+            background:linear-gradient(180deg, rgba(10,10,10,0.2) 0%, rgba(10,10,10,0.5) 60%, rgba(10,10,10,1) 100%);
+        }
+        .prof-cover-decor {
+            position:absolute; inset:0;
+            background:radial-gradient(ellipse at 20% 50%, rgba(16,185,129,0.15) 0%, transparent 55%),
+                        radial-gradient(ellipse at 80% 30%, rgba(16,185,129,0.08) 0%, transparent 45%);
+        }
+
+        /* IDENTITY BLOCK */
+        .prof-identity {
+            position:relative; z-index:2;
+            max-width:1240px; margin:0 auto; padding:0 28px;
+            margin-top:-80px; display:flex; align-items:flex-end; gap:28px;
+        }
+        .prof-avatar-wrap { position:relative; flex-shrink:0; }
+        .prof-avatar {
+            width:120px; height:120px; border-radius:50%;
+            background:linear-gradient(135deg,#34d399,#10b981,#059669);
+            display:flex; align-items:center; justify-content:center;
+            font-size:3rem; color:#0a0a0a;
+            border:4px solid #0a0a0a;
+            box-shadow:0 0 0 2px rgba(16,185,129,0.5), 0 20px 50px rgba(16,185,129,0.3);
+            animation:pulse 3s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%,100% { box-shadow:0 0 0 2px rgba(16,185,129,0.5), 0 20px 50px rgba(16,185,129,0.3); }
+            50%      { box-shadow:0 0 0 6px rgba(16,185,129,0.2), 0 20px 60px rgba(16,185,129,0.5); }
+        }
+        .prof-online-dot {
+            position:absolute; bottom:6px; right:6px;
+            width:22px; height:22px; border-radius:50%;
+            background:#10b981; border:3px solid #0a0a0a;
+            display:flex; align-items:center; justify-content:center;
+        }
+        .prof-online-dot::after {
+            content:''; width:8px; height:8px; border-radius:50%;
+            background:#fff; animation:blink 2s ease-in-out infinite;
+        }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+        .prof-name-block { padding-bottom:1.2rem; flex:1; }
+        .prof-name { font-size:2rem; font-weight:700; color:#fff; line-height:1.1; margin-bottom:6px; }
+        .prof-name span { color:#10b981; }
+        .prof-badges { display:flex; gap:8px; flex-wrap:wrap; }
+        .prof-badge {
+            display:inline-flex; align-items:center; gap:5px;
+            padding:4px 14px; border-radius:999px; font-size:0.75rem; font-weight:700;
+            letter-spacing:0.04em;
+        }
+        .prof-badge-premium { background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.35); color:#34d399; }
+        .prof-badge-verified { background:rgba(59,130,246,0.12); border:1px solid rgba(59,130,246,0.3); color:#60a5fa; }
+
+        /* STATS ROW */
+        .prof-stats-row {
+            max-width:1240px; margin:1.8rem auto 0; padding:0 28px;
+        }
+        .prof-stats-inner {
+            display:grid; grid-template-columns:repeat(4,1fr);
+            background:#111; border:1px solid rgba(16,185,129,0.12);
+            border-radius:20px; overflow:hidden;
+        }
+        .prof-stat { padding:1.4rem 1rem; text-align:center; position:relative; transition:.25s ease; }
+        .prof-stat:hover { background:rgba(16,185,129,0.04); }
+        .prof-stat + .prof-stat::before { content:''; position:absolute; left:0; top:20%; height:60%; width:1px; background:rgba(16,185,129,0.12); }
+        .prof-stat-num { font-size:1.9rem; font-weight:700; color:#34d399; line-height:1; display:block; margin-bottom:4px; }
+        .prof-stat-lbl { font-size:0.75rem; color:#6b7280; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; display:flex; align-items:center; justify-content:center; gap:5px; }
+        .prof-stat-lbl i { color:#10b981; font-size:0.7rem; }
+
+        /* LAYOUT */
+        .prof-body { max-width:1240px; margin:2.5rem auto 5rem; padding:0 28px; }
+        .prof-grid { display:grid; grid-template-columns:1.15fr 0.85fr; gap:1.8rem; align-items:start; }
+
+        /* CARD */
+        .pf-card {
+            background:#111; border:1px solid rgba(255,255,255,0.06);
+            border-radius:20px; padding:1.8rem; margin-bottom:1.5rem;
+            transition:border-color .25s ease, box-shadow .25s ease;
+        }
+        .pf-card:last-child { margin-bottom:0; }
+        .pf-card:hover { border-color:rgba(16,185,129,0.2); box-shadow:0 6px 30px rgba(16,185,129,0.06); }
+
+        .pf-card-head {
+            display:flex; align-items:center; justify-content:space-between;
+            padding-bottom:1.2rem; margin-bottom:1.5rem;
+            border-bottom:1px solid rgba(255,255,255,0.05);
+        }
+        .pf-card-head-left { display:flex; align-items:center; gap:12px; }
+        .pf-card-head-icon {
+            width:38px; height:38px; border-radius:12px;
+            background:rgba(16,185,129,0.1); border:1px solid rgba(16,185,129,0.2);
+            display:flex; align-items:center; justify-content:center;
+            color:#10b981; font-size:0.9rem;
+        }
+        .pf-card-head h3 { font-size:1rem; font-weight:700; color:#fff; }
+        .pf-card-head-action {
+            font-size:0.8rem; color:#10b981; font-weight:700;
+            display:flex; align-items:center; gap:5px; cursor:pointer;
+            padding:5px 12px; border-radius:999px; border:1px solid rgba(16,185,129,0.2);
+            background:rgba(16,185,129,0.06); transition:.25s ease;
+        }
+        .pf-card-head-action:hover { background:rgba(16,185,129,0.15); }
+
+        /* INFO FIELDS */
+        .pf-fields-2col { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+        .pf-field {
+            display:flex; align-items:center; gap:13px;
+            background:#1a1a1a; border:1px solid rgba(255,255,255,0.06);
+            border-radius:14px; padding:1rem 1.2rem;
+            transition:border-color .25s ease;
+        }
+        .pf-field:hover { border-color:rgba(16,185,129,0.2); }
+        .pf-field-icon {
+            width:36px; height:36px; border-radius:10px; flex-shrink:0;
+            background:rgba(16,185,129,0.08); display:flex; align-items:center; justify-content:center;
+            color:#10b981; font-size:0.85rem;
+        }
+        .pf-field-label { display:block; font-size:0.7rem; color:#6b7280; text-transform:uppercase; letter-spacing:0.07em; margin-bottom:3px; }
+        .pf-field-val { display:block; font-size:0.93rem; font-weight:700; color:#f9fafb; }
+        .pf-field-val.em { color:#34d399; }
+
+        /* ACTIVITY TIMELINE */
+        .pf-timeline { display:flex; flex-direction:column; gap:0; }
+        .pf-timeline-item {
+            display:flex; align-items:flex-start; gap:14px;
+            padding:1rem 0; border-bottom:1px solid rgba(255,255,255,0.04);
+            position:relative;
+        }
+        .pf-timeline-item:last-child { border-bottom:none; }
+        .pf-dot-wrap { display:flex; flex-direction:column; align-items:center; gap:0; }
+        .pf-dot {
+            width:36px; height:36px; border-radius:50%; flex-shrink:0;
+            display:flex; align-items:center; justify-content:center;
+            font-size:0.8rem; color:#fff;
+        }
+        .pf-dot-g  { background:linear-gradient(135deg,#34d399,#10b981); color:#0a0a0a; }
+        .pf-dot-b  { background:linear-gradient(135deg,#60a5fa,#3b82f6); }
+        .pf-dot-y  { background:linear-gradient(135deg,#fbbf24,#f59e0b); color:#0a0a0a; }
+        .pf-dot-r  { background:linear-gradient(135deg,#f87171,#ef4444); }
+        .pf-timeline-content { flex:1; }
+        .pf-timeline-title { font-size:0.9rem; font-weight:700; color:#f9fafb; margin-bottom:3px; }
+        .pf-timeline-sub   { font-size:0.8rem; color:#6b7280; }
+        .pf-timeline-time  { font-size:0.75rem; color:#4b5563; margin-left:auto; white-space:nowrap; padding-top:2px; }
+
+        /* QUICK ACTIONS GRID */
+        .pf-quick { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; }
+        .pf-quick-btn {
+            display:flex; flex-direction:column; align-items:center; justify-content:center;
+            gap:10px; padding:1.4rem 1rem;
+            background:#1a1a1a; border:1px solid rgba(255,255,255,0.06);
+            border-radius:16px; text-decoration:none; font-size:0.82rem;
+            font-weight:700; color:#9ca3af; transition:.25s ease; text-align:center;
+        }
+        .pf-quick-btn:hover { transform:translateY(-3px); border-color:rgba(16,185,129,0.3); color:#fff; }
+        .pf-quick-icon {
+            width:46px; height:46px; border-radius:14px;
+            display:flex; align-items:center; justify-content:center; font-size:1.15rem;
+        }
+        .qi-green  { background:linear-gradient(135deg,#34d399,#10b981); color:#0a0a0a; }
+        .qi-red    { background:linear-gradient(135deg,#f87171,#ef4444); color:#fff; }
+        .qi-yellow { background:linear-gradient(135deg,#fbbf24,#f59e0b); color:#0a0a0a; }
+        .qi-blue   { background:linear-gradient(135deg,#60a5fa,#3b82f6); color:#fff; }
+        .qi-purple { background:linear-gradient(135deg,#a78bfa,#8b5cf6); color:#fff; }
+        .qi-teal   { background:linear-gradient(135deg,#22d3ee,#06b6d4); color:#0a0a0a; }
+
+        /* SETTINGS LIST */
+        .pf-settings { display:flex; flex-direction:column; gap:7px; }
+        .pf-setting {
+            display:flex; align-items:center; justify-content:space-between;
+            padding:1rem 1.2rem; background:#1a1a1a;
+            border:1px solid rgba(255,255,255,0.05);
+            border-radius:14px; cursor:pointer; transition:.25s ease;
+            font-family:inherit; width:100%; text-align:left; text-decoration:none;
+        }
+        .pf-setting:hover { background:rgba(16,185,129,0.05); border-color:rgba(16,185,129,0.2); transform:translateX(3px); }
+        .pf-setting-left { display:flex; align-items:center; gap:13px; }
+        .pf-setting-icon {
+            width:38px; height:38px; border-radius:11px;
+            display:flex; align-items:center; justify-content:center;
+            font-size:0.88rem; flex-shrink:0;
+        }
+        .pf-setting-title { display:block; font-size:0.9rem; font-weight:700; color:#f9fafb; }
+        .pf-setting-sub   { display:block; font-size:0.75rem; color:#6b7280; margin-top:1px; }
+        .pf-setting-arrow { color:#4b5563; font-size:0.78rem; transition:transform .25s ease, color .25s ease; }
+        .pf-setting:hover .pf-setting-arrow { transform:translateX(3px); color:#10b981; }
+        .pf-setting-danger { background:rgba(239,68,68,0.04) !important; border-color:rgba(239,68,68,0.1) !important; }
+        .pf-setting-danger:hover { background:rgba(239,68,68,0.1) !important; border-color:rgba(239,68,68,0.3) !important; }
+
+        /* MEMBERSHIP CARD */
+        .pf-membership {
+            background:linear-gradient(135deg,#0d1f18 0%,#0a1a14 50%,#0d1f18 100%);
+            border:1px solid rgba(16,185,129,0.25);
+            border-radius:20px; padding:1.8rem;
+            position:relative; overflow:hidden; margin-bottom:1.5rem;
+        }
+        .pf-membership::before {
+            content:''; position:absolute; top:-40px; right:-40px;
+            width:180px; height:180px; border-radius:50%;
+            background:radial-gradient(circle, rgba(16,185,129,0.15) 0%, transparent 70%);
+        }
+        .pf-membership::after {
+            content:''; position:absolute; bottom:-30px; left:-20px;
+            width:120px; height:120px; border-radius:50%;
+            background:radial-gradient(circle, rgba(16,185,129,0.08) 0%, transparent 70%);
+        }
+        .pf-mem-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.2rem; position:relative; z-index:1; }
+        .pf-mem-badge {
+            display:inline-flex; align-items:center; gap:6px;
+            background:rgba(16,185,129,0.15); border:1px solid rgba(16,185,129,0.3);
+            padding:6px 16px; border-radius:999px; color:#34d399;
+            font-size:0.8rem; font-weight:700; letter-spacing:0.05em;
+        }
+        .pf-mem-logo { font-size:1.1rem; font-weight:700; color:#fff; }
+        .pf-mem-logo span { color:#10b981; }
+        .pf-mem-title { font-size:1.3rem; font-weight:700; color:#fff; margin-bottom:4px; position:relative; z-index:1; }
+        .pf-mem-sub { font-size:0.85rem; color:#6b7280; margin-bottom:1.2rem; position:relative; z-index:1; }
+        .pf-mem-perks { display:flex; flex-direction:column; gap:7px; position:relative; z-index:1; }
+        .pf-mem-perk { display:flex; align-items:center; gap:9px; font-size:0.85rem; color:#d1d5db; }
+        .pf-mem-perk i { color:#10b981; font-size:0.8rem; width:14px; }
+
+        /* RESPONSIVE */
+        @media (max-width:960px) {
+            .prof-grid { grid-template-columns:1fr; }
+            .prof-stats-inner { grid-template-columns:repeat(2,1fr); }
+            .prof-stat + .prof-stat::before { display:none; }
+            .prof-stat:nth-child(1), .prof-stat:nth-child(2) { border-bottom:1px solid rgba(16,185,129,0.1); }
+        }
+        @media (max-width:640px) {
+            .prof-identity { flex-direction:column; align-items:center; text-align:center; margin-top:-60px; gap:16px; }
+            .prof-avatar { width:100px; height:100px; font-size:2.4rem; }
+            .prof-name-block { padding-bottom:0; }
+            .prof-name { font-size:1.6rem; }
+            .prof-badges { justify-content:center; }
+            .prof-stats-inner { grid-template-columns:repeat(2,1fr); }
+            .pf-fields-2col { grid-template-columns:1fr; }
+            .pf-quick { grid-template-columns:repeat(2,1fr); }
+            .prof-body { padding:0 16px; }
+            .prof-stats-row { padding:0 16px; }
+            .prof-nav-inner { padding:0 16px; }
+            .prof-cover { height:200px; }
+        }
+        @media (max-width:400px) {
+            .pf-quick { grid-template-columns:1fr 1fr; }
+        }
+    </style>
+</head>
+<body class="prof-page">
+
+<!-- ── NAV ── -->
+<header class="prof-nav">
+    <div class="prof-nav-inner">
+        <a href="index.html" class="prof-nav-logo">
+            <i class="fas fa-gem"></i> Home<span>verse</span>
+        </a>
+        <div class="prof-nav-right">
+            <a href="index.html" class="prof-nav-back">
+                <i class="fas fa-arrow-left"></i> Home
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- ── COVER ── -->
+<div class="prof-cover">
+    <div class="prof-cover-overlay"></div>
+    <div class="prof-cover-decor"></div>
+</div>
+
+<!-- ── IDENTITY ── -->
+<div class="prof-identity">
+    <div class="prof-avatar-wrap">
+        <div class="prof-avatar"><i class="fas fa-user"></i></div>
+        <div class="prof-online-dot"></div>
+    </div>
+    <div class="prof-name-block">
+        <h1 class="prof-name" id="profileFullName">Welcome <span>Back</span></h1>
+        <div class="prof-badges">
+            <span class="prof-badge prof-badge-premium"><i class="fas fa-gem"></i> Premium Member</span>
+            <span class="prof-badge prof-badge-verified"><i class="fas fa-shield-check"></i> Verified</span>
+        </div>
+    </div>
+</div>
+
+<!-- ── STATS ── -->
+<div class="prof-stats-row">
+    <div class="prof-stats-inner">
+        <div class="prof-stat">
+            <span class="prof-stat-num">0</span>
+            <span class="prof-stat-lbl"><i class="fas fa-heart"></i> Saved</span>
+        </div>
+        <div class="prof-stat">
+            <span class="prof-stat-num">0</span>
+            <span class="prof-stat-lbl"><i class="fas fa-eye"></i> Viewed</span>
+        </div>
+        <div class="prof-stat">
+            <span class="prof-stat-num">0</span>
+            <span class="prof-stat-lbl"><i class="fas fa-home"></i> Listed</span>
+        </div>
+        <div class="prof-stat">
+            <span class="prof-stat-num">—</span>
+            <span class="prof-stat-lbl"><i class="fas fa-calendar"></i> Joined</span>
+        </div>
+    </div>
+</div>
+
+<!-- ── BODY ── -->
+<div class="prof-body">
+    <div class="prof-grid">
+
+        <!-- LEFT COLUMN -->
+        <div>
+
+            <!-- Personal Info -->
+            <div class="pf-card">
+                <div class="pf-card-head">
+                    <div class="pf-card-head-left">
+                        <div class="pf-card-head-icon"><i class="fas fa-user"></i></div>
+                        <h3>Personal Information</h3>
+                    </div>
+                    <div class="pf-card-head-action"><i class="fas fa-pen"></i> Edit</div>
+                </div>
+                <div class="pf-fields-2col">
+                    <div class="pf-field">
+                        <div class="pf-field-icon"><i class="fas fa-id-badge"></i></div>
+                        <div>
+                            <span class="pf-field-label">First Name</span>
+                            <span class="pf-field-val" id="profileFirstName">—</span>
+                        </div>
+                    </div>
+                    <div class="pf-field">
+                        <div class="pf-field-icon"><i class="fas fa-id-badge"></i></div>
+                        <div>
+                            <span class="pf-field-label">Last Name</span>
+                            <span class="pf-field-val" id="profileLastName">—</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                    <div class="pf-field">
+                        <div class="pf-field-icon"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <span class="pf-field-label">Phone Number</span>
+                            <span class="pf-field-val em" id="profilePhone">—</span>
+                        </div>
+                    </div>
+                    <div class="pf-field">
+                        <div class="pf-field-icon"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <span class="pf-field-label">Email Address</span>
+                            <span class="pf-field-val" id="profileEmail">—</span>
+                        </div>
+                    </div>
+                    <div class="pf-field">
+                        <div class="pf-field-icon"><i class="fas fa-calendar-alt"></i></div>
+                        <div>
+                            <span class="pf-field-label">Member Since</span>
+                            <span class="pf-field-val" id="profileJoinDate">—</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="pf-card">
+                <div class="pf-card-head">
+                    <div class="pf-card-head-left">
+                        <div class="pf-card-head-icon"><i class="fas fa-clock"></i></div>
+                        <h3>Recent Activity</h3>
+                    </div>
+                </div>
+                <div class="pf-timeline">
+                    <div class="pf-timeline-item">
+                        <div class="pf-dot pf-dot-g"><i class="fas fa-user-plus"></i></div>
+                        <div class="pf-timeline-content">
+                            <div class="pf-timeline-title">Account Created</div>
+                            <div class="pf-timeline-sub">Welcome to Homeverse!</div>
+                        </div>
+                        <div class="pf-timeline-time" id="profileJoinDate2">—</div>
+                    </div>
+                    <div class="pf-timeline-item">
+                        <div class="pf-dot pf-dot-b"><i class="fas fa-search"></i></div>
+                        <div class="pf-timeline-content">
+                            <div class="pf-timeline-title">Browse Properties</div>
+                            <div class="pf-timeline-sub">Explore 1,200+ listings</div>
+                        </div>
+                        <div class="pf-timeline-time">Now</div>
+                    </div>
+                    <div class="pf-timeline-item">
+                        <div class="pf-dot pf-dot-y"><i class="fas fa-heart"></i></div>
+                        <div class="pf-timeline-content">
+                            <div class="pf-timeline-title">Save Favorites</div>
+                            <div class="pf-timeline-sub">Start building your wishlist</div>
+                        </div>
+                        <div class="pf-timeline-time">—</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="pf-card">
+                <div class="pf-card-head">
+                    <div class="pf-card-head-left">
+                        <div class="pf-card-head-icon"><i class="fas fa-bolt"></i></div>
+                        <h3>Quick Actions</h3>
+                    </div>
+                </div>
+                <div class="pf-quick">
+                    <a href="all-properties.html" class="pf-quick-btn">
+                        <div class="pf-quick-icon qi-green"><i class="fas fa-search"></i></div>
+                        Browse Properties
+                    </a>
+                    <a href="#" class="pf-quick-btn">
+                        <div class="pf-quick-icon qi-red"><i class="fas fa-heart"></i></div>
+                        Saved
+                    </a>
+                    <a href="#" class="pf-quick-btn">
+                        <div class="pf-quick-icon qi-yellow"><i class="fas fa-bell"></i></div>
+                        Alerts
+                    </a>
+                    <a href="#" class="pf-quick-btn">
+                        <div class="pf-quick-icon qi-blue"><i class="fas fa-calendar-check"></i></div>
+                        Visits
+                    </a>
+                    <a href="#" class="pf-quick-btn">
+                        <div class="pf-quick-icon qi-purple"><i class="fas fa-chart-bar"></i></div>
+                        Reports
+                    </a>
+                    <a href="index.html#contact" class="pf-quick-btn">
+                        <div class="pf-quick-icon qi-teal"><i class="fas fa-headset"></i></div>
+                        Support
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div>
+
+            <!-- Membership Card -->
+            <div class="pf-membership">
+                <div class="pf-mem-top">
+                    <span class="pf-mem-badge"><i class="fas fa-gem"></i> PREMIUM</span>
+                    <span class="pf-mem-logo">Home<span>verse</span></span>
+                </div>
+                <div class="pf-mem-title">Premium Membership</div>
+                <div class="pf-mem-sub">Enjoy exclusive features and priority access</div>
+                <div class="pf-mem-perks">
+                    <div class="pf-mem-perk"><i class="fas fa-check-circle"></i> Unlimited property saves</div>
+                    <div class="pf-mem-perk"><i class="fas fa-check-circle"></i> Priority agent matching</div>
+                    <div class="pf-mem-perk"><i class="fas fa-check-circle"></i> Early access to new listings</div>
+                    <div class="pf-mem-perk"><i class="fas fa-check-circle"></i> Dedicated support team</div>
+                </div>
+            </div>
+
+            <!-- Account Settings -->
+            <div class="pf-card">
+                <div class="pf-card-head">
+                    <div class="pf-card-head-left">
+                        <div class="pf-card-head-icon"><i class="fas fa-cog"></i></div>
+                        <h3>Settings</h3>
+                    </div>
+                </div>
+                <div class="pf-settings">
+
+                    <button class="pf-setting">
+                        <div class="pf-setting-left">
+                            <div class="pf-setting-icon qi-green"><i class="fas fa-user-edit"></i></div>
+                            <div>
+                                <span class="pf-setting-title">Edit Profile</span>
+                                <span class="pf-setting-sub">Update your details</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right pf-setting-arrow"></i>
+                    </button>
+
+                    <button class="pf-setting">
+                        <div class="pf-setting-left">
+                            <div class="pf-setting-icon qi-blue"><i class="fas fa-lock"></i></div>
+                            <div>
+                                <span class="pf-setting-title">Security</span>
+                                <span class="pf-setting-sub">Change password</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right pf-setting-arrow"></i>
+                    </button>
+
+                    <button class="pf-setting">
+                        <div class="pf-setting-left">
+                            <div class="pf-setting-icon qi-yellow"><i class="fas fa-bell"></i></div>
+                            <div>
+                                <span class="pf-setting-title">Notifications</span>
+                                <span class="pf-setting-sub">Manage alerts</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right pf-setting-arrow"></i>
+                    </button>
+
+                    <button class="pf-setting">
+                        <div class="pf-setting-left">
+                            <div class="pf-setting-icon qi-purple"><i class="fas fa-palette"></i></div>
+                            <div>
+                                <span class="pf-setting-title">Appearance</span>
+                                <span class="pf-setting-sub">Theme & display</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right pf-setting-arrow"></i>
+                    </button>
+
+                    <button class="pf-setting">
+                        <div class="pf-setting-left">
+                            <div class="pf-setting-icon qi-teal"><i class="fas fa-headset"></i></div>
+                            <div>
+                                <span class="pf-setting-title">Help & Support</span>
+                                <span class="pf-setting-sub">Get assistance</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right pf-setting-arrow"></i>
+                    </button>
+
+                    <button class="pf-setting pf-setting-danger" id="logoutBtn">
+                        <div class="pf-setting-left">
+                            <div class="pf-setting-icon qi-red"><i class="fas fa-sign-out-alt"></i></div>
+                            <div>
+                                <span class="pf-setting-title" style="color:#fca5a5">Logout</span>
+                                <span class="pf-setting-sub">Sign out of account</span>
+                            </div>
+                        </div>
+                        <i class="fas fa-chevron-right pf-setting-arrow"></i>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="./js/script.js"></script>
+</body>
+</html>
